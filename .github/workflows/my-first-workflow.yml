@@ -5,10 +5,12 @@ on:
       Name:
         description: input the name
         required: true
-        default: jimbo3993
+        default: kgunnarsson
   schedule:
     - cron: '*/15 6 6 * *'
-
 jobs:
   echo-step:
-    steps: echo "hello ${{inputs.name}}"
+    runs-on: ubuntu-latest
+    steps:
+      - run : |
+          echo "hello  ${{inputs.Name}}"
