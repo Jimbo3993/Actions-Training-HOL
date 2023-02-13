@@ -1,0 +1,15 @@
+name: Workflow-1
+on:
+  workflow_dispatch:
+    inputs:
+      Name: 
+        description: input the name
+        required: true
+        default: jimbo3993
+  schedule:
+    - cron: '*/15 6 6 * *'
+    
+jobs:
+  echo-step:
+    steps: |
+      echo "hello ${{inputs.name}}"
